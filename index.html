@@ -1,1 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vision: una enciclopedia retro para buscar y descubrir artículos de la Wikipedia en español.">
+  <title>Vision · El conocimiento del mañana, hoy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-search" viewBox="0 0 24 24">
+      <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="m15.5 15.5 5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24">
+      <path d="M12 2.4 14.9 8.6 21.6 9.6 16.8 14.3 17.9 21 12 17.8 6.1 21 7.2 14.3 2.4 9.6 9.1 8.6Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24">
+      <path d="M4 4.5h6.2c1 0 1.8.8 1.8 1.8v13.2c0-1-.8-1.8-1.8-1.8H4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M20 4.5h-6.2c-1 0-1.8.8-1.8 1.8v13.2c0-1 .8-1.8 1.8-1.8H20Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <ellipse cx="12" cy="12" rx="3.7" ry="8.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M3.8 9h16.4M3.8 15h16.4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+      <path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-alert" viewBox="0 0 24 24">
+      <path d="M12 3 22 20H2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M12 9v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="12" cy="17.2" r="1" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-disc" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="12" cy="12" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M12 3a9 9 0 0 1 8 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M7 19.8A9 9 0 0 1 3.5 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="icon-shell" viewBox="0 0 24 24">
+      <path d="M12 21c-5.2 0-9-4.2-9-9s4-9 9-9 9 4 9 9c0 4.2-2.5 7.4-6.2 8.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M12 16.5c-2.7 0-4.8-2.3-4.8-5s2.2-5 4.8-5 4.8 2.2 4.8 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M12 13.4a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4Z" fill="none" stroke="currentColor" stroke-width="1.3"/>
+    </symbol>
+  </svg>
 
+  <a class="skip-link" href="#resultados">Saltar a los resultados</a>
+
+  <div class="page-shell">
+    <div class="top-strip" aria-hidden="true">
+      <span class="top-strip__dot"></span>
+      <span>Sistema de consulta enciclopédica</span>
+      <span class="top-strip__rule"></span>
+      <span>Wikipedia en español</span>
+      <svg class="icon icon--tiny" aria-hidden="true"><use href="#icon-star"/></svg>
+    </div>
+
+    <header class="masthead window">
+      <div class="window__titlebar">
+        <span class="window__badge" aria-hidden="true">
+          <svg class="icon"><use href="#icon-globe"/></svg>
+        </span>
+        <span class="window__title">Vision.exe</span>
+        <span class="window__controls" aria-hidden="true">
+          <span class="window__control">_</span>
+          <span class="window__control">□</span>
+          <span class="window__control">×</span>
+        </span>
+      </div>
+
+      <div class="hero">
+        <div class="hero__copy">
+          <p class="hero__eyebrow">Enciclopedia multimedia · Edición 1998</p>
+          <h1 class="hero__title">
+            Vision
+            <span class="hero__star" aria-hidden="true">
+              <svg class="icon"><use href="#icon-star"/></svg>
+            </span>
+          </h1>
+          <p class="hero__tagline">El conocimiento del mañana, hoy.</p>
+          <p class="hero__intro">
+            Explora millones de artículos de la Wikipedia en español desde una
+            ventana al futuro. Busca, descubre y guarda tus hallazgos favoritos.
+          </p>
+          <ul class="hero__badges">
+            <li class="badge">
+              <svg class="icon" aria-hidden="true"><use href="#icon-globe"/></svg>
+              Wikipedia en español
+            </li>
+            <li class="badge">
+              <svg class="icon" aria-hidden="true"><use href="#icon-book"/></svg>
+              Contenido libre
+            </li>
+            <li class="badge">
+              <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+              Hecho para curiosos
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero__art">
+          <svg class="hero-globe" viewBox="0 0 320 320" role="img" aria-labelledby="globe-title globe-desc">
+            <title id="globe-title">Globo terráqueo rodeado de estrellas</title>
+            <desc id="globe-desc">Ilustración decorativa de un globo terráqueo con anillos orbitales y destellos.</desc>
+            <defs>
+              <radialGradient id="hero-globe-fill" cx="35%" cy="28%" r="78%">
+                <stop offset="0%" stop-color="#f7fff4"/>
+                <stop offset="34%" stop-color="#a8dfb8"/>
+                <stop offset="72%" stop-color="#4e9f6d"/>
+                <stop offset="100%" stop-color="#0f5f6c"/>
+              </radialGradient>
+              <linearGradient id="hero-orbit" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#fffaf0"/>
+                <stop offset="50%" stop-color="#cdeffc"/>
+                <stop offset="100%" stop-color="#f2b134"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="160" cy="278" rx="104" ry="18" fill="#0f5f6c" opacity=".16"/>
+            <g class="hero-globe__orbit" fill="none" stroke="url(#hero-orbit)" stroke-width="3" opacity=".9">
+              <ellipse cx="160" cy="150" rx="136" ry="46" transform="rotate(-20 160 150)"/>
+              <ellipse cx="160" cy="150" rx="126" ry="62" transform="rotate(54 160 150)" opacity=".55"/>
+            </g>
+            <circle cx="160" cy="150" r="92" fill="url(#hero-globe-fill)" stroke="#eef8fb" stroke-width="7"/>
+            <path d="M95 118c18-18 35-24 53-20 14 3 20 15 35 16 16 1 23-9 40-4 13 4 20 17 18 30-3 16-20 17-27 30-7 13-1 25-12 34-12 10-31 5-42-4-10-8-12-22-25-27-14-5-28 1-39-8-12-10-10-32-1-47Z" fill="#f7fff4" opacity=".72"/>
+            <path d="M119 210c8-9 20-9 28-3 9 6 13 18 8 27-5 8-18 10-27 5-10-6-17-21-9-29Z" fill="#f7fff4" opacity=".55"/>
+            <path d="M188 72c7-5 17-3 21 4 4 8 0 17-8 19-8 2-16-3-17-11-1-5 0-9 4-12Z" fill="#f7fff4" opacity=".5"/>
+            <g stroke="#f7fff4" stroke-width="2" stroke-linecap="round" opacity=".6">
+              <path d="M160 58v12M160 230v12M68 150h12M240 150h12"/>
+            </g>
+            <g fill="#ffd97a">
+              <path d="m52 64 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z"/>
+              <path d="m262 74 2 6 6 2-6 2-2 6-2-6-6-2 6-2Z"/>
+              <path d="m250 232 2 5 5 2-5 2-2 5-2-5-5-2 5-2Z"/>
+              <path d="m64 218 1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5Z"/>
+            </g>
+            <g fill="#fffaf0" opacity=".8">
+              <circle cx="96" cy="66" r="2.5"/>
+              <circle cx="230" cy="58" r="2"/>
+              <circle cx="278" cy="170" r="2.2"/>
+              <circle cx="38" cy="148" r="2"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <form class="search-panel" id="search-form" role="search" aria-label="Buscar artículos en Wikipedia">
+        <label class="search-panel__label" for="search-input">¿Qué quieres descubrir hoy?</label>
+        <div class="search-bar">
+          <div class="search-bar__field">
+            <svg class="icon search-bar__icon" aria-hidden="true"><use href="#icon-search"/></svg>
+            <input
+              class="search-input"
+              id="search-input"
+              name="query"
+              type="search"
+              placeholder="Ej. dinosaurios, Marie Curie, agujeros negros…"
+              autocomplete="off"
+              spellcheck="false"
+              required
+            >
+          </div>
+          <button class="btn btn--search" type="submit">
+            Buscar
+            <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+          </button>
+        </div>
+
+        <div class="search-filters">
+          <label class="field">
+            <span class="field__label">Ordenar por</span>
+            <select class="field__select" id="sort-select" name="sort">
+              <option value="relevance">Relevancia</option>
+              <option value="alpha-asc">Título (A–Z)</option>
+              <option value="alpha-desc">Título (Z–A)</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="field__label">Filtrar por tipo</span>
+            <select class="field__select" id="type-select" name="type">
+              <option value="">Todos los espacios</option>
+              <option value="0">Artículos</option>
+              <option value="14">Categorías</option>
+              <option value="10">Plantillas</option>
+              <option value="12">Ayuda</option>
+            </select>
+          </label>
+          <p class="search-hint">Consejo: prueba con «fósiles», «planetas» o «arquitectura».</p>
+        </div>
+      </form>
+    </header>
+
+    <main class="page-grid">
+      <section class="window results-window" id="resultados" aria-labelledby="results-title">
+        <div class="window__titlebar">
+          <span class="window__badge" aria-hidden="true">
+            <svg class="icon"><use href="#icon-book"/></svg>
+          </span>
+          <span class="window__title">Archivo de resultados</span>
+        </div>
+
+        <div class="window__body">
+          <div class="section-header">
+            <div>
+              <p class="kicker">Biblioteca abierta</p>
+              <h2 class="section-title" id="results-title">Resultados</h2>
+            </div>
+            <p class="results-status" id="results-status" role="status">Esperando una búsqueda</p>
+          </div>
+
+          <div class="state state--empty" id="empty-state">
+            <div class="state__icon-wrap" aria-hidden="true">
+              <svg class="icon"><use href="#icon-book"/></svg>
+            </div>
+            <h3 class="state__title">Tu próxima obsesión empieza con una búsqueda</h3>
+            <p class="state__text">
+              Escribe un tema arriba y pulsa <strong>Buscar</strong>. Los resultados
+              aparecerán aquí, como fichas de una enciclopedia del futuro.
+            </p>
+            <noscript>
+              <p class="state__text"><strong>Activa JavaScript</strong> para consultar Wikipedia desde Vision.</p>
+            </noscript>
+          </div>
+
+          <div class="state state--empty" id="no-results-state" hidden>
+            <div class="state__icon-wrap" aria-hidden="true">
+              <svg class="icon"><use href="#icon-search"/></svg>
+            </div>
+            <h3 class="state__title">No encontramos nada en esta galaxia</h3>
+            <p class="state__text" id="no-results-text">
+              Prueba con otras palabras, revisa la ortografía o cambia el filtro
+              de tipo de página.
+            </p>
+          </div>
+
+          <div class="state state--loading" id="loading-state" hidden>
+            <div class="spinner" aria-hidden="true"></div>
+            <h3 class="state__title">Consultando la enciclopedia</h3>
+            <p class="state__text">Buscando en la Wikipedia en español…</p>
+          </div>
+
+          <div class="state state--error" id="error-state" hidden>
+            <div class="state__icon-wrap" aria-hidden="true">
+              <svg class="icon"><use href="#icon-alert"/></svg>
+            </div>
+            <h3 class="state__title">La conexión se perdió en el ciberespacio</h3>
+            <p class="state__text">
+              No pudimos consultar Wikipedia. Revisa tu conexión e inténtalo de nuevo.
+            </p>
+            <button class="btn btn--small" type="button" data-action="retry">Reintentar</button>
+          </div>
+
+          <ol class="result-list" id="result-list" aria-live="polite"></ol>
+
+          <template id="result-template">
+            <li class="result-card">
+              <span class="result-card__rank" data-field="rank">01</span>
+              <div class="result-card__content">
+                <div class="result-card__meta">
+                  <span class="tag">Artículo</span>
+                  <span class="result-card__source">es.wikipedia.org</span>
+                </div>
+                <h3 class="result-card__title">
+                  <a href="#" data-action="open" data-field="title">Título del artículo</a>
+                </h3>
+                <p class="result-card__snippet" data-field="snippet">Resumen del artículo encontrado en Wikipedia.</p>
+                <div class="result-card__actions">
+                  <button class="btn btn--small" type="button" data-action="open">Leer artículo</button>
+                  <button class="btn btn--ghost btn--small" type="button" data-action="favorite" aria-pressed="false">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+                    <span data-field="favorite-label">Guardar</span>
+                  </button>
+                </div>
+              </div>
+            </li>
+          </template>
+        </div>
+      </section>
+
+      <aside class="sidebar" aria-label="Panel lateral">
+        <section class="window sidebar-window" aria-labelledby="favorites-title">
+          <div class="window__titlebar">
+            <span class="window__badge" aria-hidden="true">
+              <svg class="icon"><use href="#icon-star"/></svg>
+            </span>
+            <h2 class="window__title" id="favorites-title">Favoritos</h2>
+            <span class="window__count" id="favorites-count">0</span>
+          </div>
+          <div class="window__body">
+            <div class="favorites-empty" id="favorites-empty">
+              <svg class="icon empty-star" aria-hidden="true"><use href="#icon-star"/></svg>
+              <p>Tu estantería está esperando.</p>
+              <p class="small">Pulsa <strong>Guardar</strong> en un resultado para conservarlo aquí.</p>
+            </div>
+            <ul class="favorites-list" id="favorites-list" aria-live="polite"></ul>
+            <template id="favorite-template">
+              <li class="favorite-item">
+                <button class="favorite-item__link" type="button" data-action="open" data-field="title">Título del artículo</button>
+                <button class="favorite-item__remove" type="button" data-action="remove" aria-label="Quitar de favoritos">
+                  <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
+                </button>
+              </li>
+            </template>
+          </div>
+        </section>
+
+        <section class="window sidebar-window" aria-labelledby="fact-title">
+          <div class="window__titlebar">
+            <span class="window__badge" aria-hidden="true">
+              <svg class="icon"><use href="#icon-disc"/></svg>
+            </span>
+            <h2 class="window__title" id="fact-title">Del archivo</h2>
+          </div>
+          <div class="window__body">
+            <p class="kicker">Cápsula del tiempo</p>
+            <h3 class="sidebar-heading">Una ventana al asombro</h3>
+            <p class="sidebar-copy">
+              Cada artículo es una cápsula del tiempo: una idea, un lugar o una vida
+              esperando a que alguien vuelva a preguntar por ella.
+            </p>
+            <div class="fact-footer">
+              <svg class="icon" aria-hidden="true"><use href="#icon-disc"/></svg>
+              <span>Explora. Aprende. Comparte.</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="capsule-card" aria-label="Nota sobre Vision">
+          <svg class="icon" aria-hidden="true"><use href="#icon-shell"/></svg>
+          <div>
+            <p class="capsule-card__title">Fósil digital</p>
+            <p class="capsule-card__text">Hecho con HTML, CSS y mucha curiosidad.</p>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <section class="window reader" id="article-reader" aria-labelledby="article-title" hidden>
+      <div class="window__titlebar">
+        <span class="window__badge" aria-hidden="true">
+          <svg class="icon"><use href="#icon-book"/></svg>
+        </span>
+        <span class="window__title">Visor de artículos</span>
+        <button class="window__close" type="button" data-action="close-reader" aria-label="Cerrar artículo">
+          <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
+        </button>
+      </div>
+      <div class="reader__body">
+        <header class="reader__header">
+          <p class="kicker">Artículo de Wikipedia</p>
+          <h2 class="reader__title" id="article-title">Título del artículo</h2>
+          <div class="reader__meta">
+            <span id="article-source">es.wikipedia.org</span>
+            <a id="article-link" href="#" target="_blank" rel="noopener">Ver artículo original</a>
+          </div>
+        </header>
+        <div class="reader__content" id="article-content"></div>
+        <footer class="reader__footer">
+          <button class="btn btn--small" type="button" data-action="close-reader">Volver a los resultados</button>
+        </footer>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p class="site-footer__brand">
+        <span class="footer-mark" aria-hidden="true">V</span>
+        Vision · Enciclopedia del mañana
+      </p>
+      <p class="site-footer__meta">
+        Datos en vivo de
+        <a href="https://es.wikipedia.org" target="_blank" rel="noopener">Wikipedia en español</a>
+        · HTML, CSS y curiosidad
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
