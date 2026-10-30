@@ -15,9 +15,12 @@ Vanilla HTML/CSS/JS single-page app ("Vision") for searching and reading Spanish
 
 ## Style
 
-- Palette: sky blue, greens, silver, soft gradients.
-- Body font Georgia; decorative headings Comic Sans MS and Ubuntu Condensed.
-- Retro simulated windows with beveled/gradient buttons, subtle fade-in/open animations, public-domain SVG/image decorations (globes, books, dinosaur fossils, CDs).
+- Palette: space indigo `#3C2C5B`, olive `#3E5C38`, lime `#C3D129`, sage `#729B8F`, cream `#EAE4D3`.
+- Fonts (Google Fonts): Lora body, Jost display headings, Space Mono labels/UI accents.
+- Zine/analog collage aesthetic: paper grids, tape strips, rotated cutout labels, hard offset shadows, pixel and wireframe ornaments.
+- Retro OS chrome: gray Win95/System 7-style titlebars, pixel bevel buttons, floating dialog ornaments, and subtle fade-in/open animations.
+- CRT finish: fixed scanline overlay, slight chromatic aberration on imagery, and a wait cursor during loading.
+- Use the transparent assets in `assets/images/` (globe, CD, T-Rex skeleton) rather than duplicating them as SVG.
 
 ## Comportamiento ante incertidumbre
 

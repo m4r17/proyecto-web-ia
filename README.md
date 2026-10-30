@@ -9,11 +9,12 @@ Estructura: vanilla page.
 - Filtros: Selector para ordenar resultados (ej. alfabéticamente, por relevancia) y/o filtrar por tipo de página.
 - Requisitos indispensables: conexión a la api mediante fetch(), buscador funcional, filtros para organizar resultados, sección de favoritos, mensajes de error y estado vacío, diseño responsivo.
 Diseño visual y estética:
--Paleta: azul cielo, tonos verdes y plateados, degradados suaves.
--tipografía: Georgia para el cuerpo, Comic Sans MS y Ubuntu Condensed para titulos decorativos.
+-Paleta: índigo espacial (#3C2C5B), verde oliva (#3E5C38), lima (#C3D129), azul acuoso (#729B8F) y crema (#EAE4D3), con degradados suaves.
+-tipografía: Lora para el cuerpo, Jost para títulos decorativos y Space Mono para etiquetas y acentos de interfaz.
 - Ventanas simuladas: Los contenidos de los artículos se muestran dentro de contendedores con interfaces retro (como botones degradados y bordes biselados).
-- Elementos visuales: Globos terráqueos, libros, fósiles de dinosaurios, CDs, etc. como decorativos(SVG e imágenes de dominio público).
+- Elementos visuales: Globos terráqueos, libros, fósiles de dinosaurios, CDs, etc. como decorativos. Usar las imágenes transparentes de `assets/images/` (globo, CD y esqueleto de T-Rex).
 - Animaciones: Transiciones sutiles al cargar contenido (fade-in, ventana que se abre efecto)
+- Estética: collage tipo zine, ventanas grises de sistema operativo antiguo, scanlines CRT y aberración cromática sutil en las imágenes.
 
 API: Todas las peticiones fetch deben incluir el header Api-User-Agent, por ejemplo: headers: { 'Api-User-Agent': 'UtopianScholasticProject/1.0 (mariog3.mgss@gmail.com)' }
 Wikipedia API (Action API)

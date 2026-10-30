@@ -7,7 +7,7 @@
   <title>Vision · El conocimiento del mañana, hoy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -107,47 +107,27 @@
         </div>
 
         <div class="hero__art">
-          <svg class="hero-globe" viewBox="0 0 320 320" role="img" aria-labelledby="globe-title globe-desc">
-            <title id="globe-title">Globo terráqueo rodeado de estrellas</title>
-            <desc id="globe-desc">Ilustración decorativa de un globo terráqueo con anillos orbitales y destellos.</desc>
-            <defs>
-              <radialGradient id="hero-globe-fill" cx="35%" cy="28%" r="78%">
-                <stop offset="0%" stop-color="#f7fff4"/>
-                <stop offset="34%" stop-color="#a8dfb8"/>
-                <stop offset="72%" stop-color="#4e9f6d"/>
-                <stop offset="100%" stop-color="#0f5f6c"/>
-              </radialGradient>
-              <linearGradient id="hero-orbit" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#fffaf0"/>
-                <stop offset="50%" stop-color="#cdeffc"/>
-                <stop offset="100%" stop-color="#f2b134"/>
-              </linearGradient>
-            </defs>
-            <ellipse cx="160" cy="278" rx="104" ry="18" fill="#0f5f6c" opacity=".16"/>
-            <g class="hero-globe__orbit" fill="none" stroke="url(#hero-orbit)" stroke-width="3" opacity=".9">
-              <ellipse cx="160" cy="150" rx="136" ry="46" transform="rotate(-20 160 150)"/>
-              <ellipse cx="160" cy="150" rx="126" ry="62" transform="rotate(54 160 150)" opacity=".55"/>
-            </g>
-            <circle cx="160" cy="150" r="92" fill="url(#hero-globe-fill)" stroke="#eef8fb" stroke-width="7"/>
-            <path d="M95 118c18-18 35-24 53-20 14 3 20 15 35 16 16 1 23-9 40-4 13 4 20 17 18 30-3 16-20 17-27 30-7 13-1 25-12 34-12 10-31 5-42-4-10-8-12-22-25-27-14-5-28 1-39-8-12-10-10-32-1-47Z" fill="#f7fff4" opacity=".72"/>
-            <path d="M119 210c8-9 20-9 28-3 9 6 13 18 8 27-5 8-18 10-27 5-10-6-17-21-9-29Z" fill="#f7fff4" opacity=".55"/>
-            <path d="M188 72c7-5 17-3 21 4 4 8 0 17-8 19-8 2-16-3-17-11-1-5 0-9 4-12Z" fill="#f7fff4" opacity=".5"/>
-            <g stroke="#f7fff4" stroke-width="2" stroke-linecap="round" opacity=".6">
-              <path d="M160 58v12M160 230v12M68 150h12M240 150h12"/>
-            </g>
-            <g fill="#ffd97a">
-              <path d="m52 64 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z"/>
-              <path d="m262 74 2 6 6 2-6 2-2 6-2-6-6-2 6-2Z"/>
-              <path d="m250 232 2 5 5 2-5 2-2 5-2-5-5-2 5-2Z"/>
-              <path d="m64 218 1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5Z"/>
-            </g>
-            <g fill="#fffaf0" opacity=".8">
-              <circle cx="96" cy="66" r="2.5"/>
-              <circle cx="230" cy="58" r="2"/>
-              <circle cx="278" cy="170" r="2.2"/>
-              <circle cx="38" cy="148" r="2"/>
-            </g>
-          </svg>
+          <span class="hero__orbit hero__orbit--one" aria-hidden="true"></span>
+          <span class="hero__orbit hero__orbit--two" aria-hidden="true"></span>
+          <span class="pixel-planet" aria-hidden="true"></span>
+          <img
+            class="hero-globe"
+            src="assets/images/pngtree-classic-world-globe-model-isolated-png-image_19652786.webp"
+            alt="Globo terráqueo clásico"
+            width="360"
+            height="360"
+            fetchpriority="high"
+          >
+          <div class="system-dialog" aria-hidden="true">
+            <div class="system-dialog__bar">
+              <span>vision.cfg</span>
+              <span class="system-dialog__close">×</span>
+            </div>
+            <div class="system-dialog__body">
+              <span class="system-dialog__led"></span>
+              <span>WIKIPEDIA / 56K</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -204,6 +184,11 @@
             <svg class="icon"><use href="#icon-book"/></svg>
           </span>
           <span class="window__title">Archivo de resultados</span>
+          <span class="window__controls" aria-hidden="true">
+            <span class="window__control">_</span>
+            <span class="window__control">□</span>
+            <span class="window__control">×</span>
+          </span>
         </div>
 
         <div class="window__body">
@@ -311,32 +296,74 @@
           </div>
         </section>
 
-        <section class="window sidebar-window" aria-labelledby="fact-title">
+        <section class="window sidebar-window sidebar-window--fossil" aria-labelledby="fossil-title">
           <div class="window__titlebar">
             <span class="window__badge" aria-hidden="true">
-              <svg class="icon"><use href="#icon-disc"/></svg>
+              <svg class="icon"><use href="#icon-shell"/></svg>
             </span>
-            <h2 class="window__title" id="fact-title">Del archivo</h2>
+            <h2 class="window__title" id="fossil-title">Fósil digital</h2>
+            <span class="window__controls" aria-hidden="true">
+              <span class="window__control">_</span>
+              <span class="window__control">□</span>
+              <span class="window__control">×</span>
+            </span>
           </div>
-          <div class="window__body">
+          <div class="window__body sidebar-window__body sidebar-window__body--fossil">
             <p class="kicker">Cápsula del tiempo</p>
-            <h3 class="sidebar-heading">Una ventana al asombro</h3>
+            <img
+              class="fossil-image"
+              src="assets/images/tyrannosaurus-rex-skeleton-png.png"
+              alt="Esqueleto de tiranosaurio rex"
+              width="839"
+              height="350"
+              loading="lazy"
+            >
+            <h3 class="sidebar-heading">Huesos de bits</h3>
             <p class="sidebar-copy">
-              Cada artículo es una cápsula del tiempo: una idea, un lugar o una vida
-              esperando a que alguien vuelva a preguntar por ella.
+              Un esqueleto de bits y huesos: la curiosidad también deja fósiles.
             </p>
             <div class="fact-footer">
-              <svg class="icon" aria-hidden="true"><use href="#icon-disc"/></svg>
-              <span>Explora. Aprende. Comparte.</span>
+              <span>Hecho con HTML, CSS y curiosidad.</span>
             </div>
           </div>
         </section>
 
-        <section class="capsule-card" aria-label="Nota sobre Vision">
-          <svg class="icon" aria-hidden="true"><use href="#icon-shell"/></svg>
-          <div>
-            <p class="capsule-card__title">Fósil digital</p>
-            <p class="capsule-card__text">Hecho con HTML, CSS y mucha curiosidad.</p>
+        <section class="window archive-window" aria-labelledby="archive-title">
+          <div class="window__titlebar">
+            <span class="window__badge" aria-hidden="true">
+              <svg class="icon"><use href="#icon-disc"/></svg>
+            </span>
+            <h2 class="window__title" id="archive-title">Del archivo</h2>
+            <span class="window__controls" aria-hidden="true">
+              <span class="window__control">_</span>
+              <span class="window__control">□</span>
+              <span class="window__control">×</span>
+            </span>
+          </div>
+          <div class="archive-window__body">
+            <div class="archive-window__art">
+              <span class="archive-window__wireframe" aria-hidden="true"></span>
+              <img
+                class="archive-disc"
+                src="assets/images/a-cd-disc-with-a-black-background-png.png"
+                alt="Disco compacto brillante"
+                width="350"
+                height="350"
+                loading="lazy"
+              >
+              <span class="archive-window__stamp" aria-hidden="true">CD-ROM<br>650 MB</span>
+            </div>
+            <div class="archive-window__copy">
+              <p class="kicker">Cápsula del tiempo · 1998</p>
+              <h3 class="archive-window__title">Una ventana al asombro</h3>
+              <p class="archive-window__text">
+                Cada artículo es una cápsula del tiempo: una idea, un lugar o una vida
+                esperando a que alguien vuelva a preguntar por ella.
+              </p>
+              <div class="fact-footer">
+                <span>Explora. Aprende. Comparte.</span>
+              </div>
+            </div>
           </div>
         </section>
       </aside>
@@ -348,22 +375,39 @@
           <svg class="icon"><use href="#icon-book"/></svg>
         </span>
         <span class="window__title">Visor de artículos</span>
-        <button class="window__close" type="button" data-action="close-reader" aria-label="Cerrar artículo">
+        <button class="window__close" type="button" data-action="back-to-search" aria-label="Volver a la búsqueda">
           <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
         </button>
       </div>
       <div class="reader__body">
         <header class="reader__header">
           <p class="kicker">Artículo de Wikipedia</p>
-          <h2 class="reader__title" id="article-title">Título del artículo</h2>
+          <h2 class="reader__title" id="article-title" tabindex="-1">Título del artículo</h2>
           <div class="reader__meta">
-            <span id="article-source">es.wikipedia.org</span>
-            <a id="article-link" href="#" target="_blank" rel="noopener">Ver artículo original</a>
+            <span id="article-source">Wikipedia en español</span>
           </div>
         </header>
-        <div class="reader__content" id="article-content"></div>
+
+        <div class="reader__status" id="article-loading" role="status" hidden>
+          <div class="spinner" aria-hidden="true"></div>
+          <p>Abriendo el artículo…</p>
+        </div>
+
+        <div class="reader__status reader__status--error" id="article-error" role="alert" hidden>
+          <svg class="icon" aria-hidden="true"><use href="#icon-alert"/></svg>
+          <p id="article-error-text">No pudimos cargar el artículo.</p>
+          <button class="btn btn--small" type="button" data-action="retry-article">Reintentar</button>
+        </div>
+
+        <div class="reader__content article-content" id="article-content"></div>
         <footer class="reader__footer">
-          <button class="btn btn--small" type="button" data-action="close-reader">Volver a los resultados</button>
+          <div class="reader__actions">
+            <button class="btn btn--small" type="button" data-action="back-to-search">Volver a la búsqueda</button>
+            <button class="btn btn--ghost btn--small" type="button" id="article-favorite" data-action="favorite-current" aria-pressed="false">
+              <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+              <span data-field="favorite-label">Guardar en favoritos</span>
+            </button>
+          </div>
         </footer>
       </div>
     </section>
