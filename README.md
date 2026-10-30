@@ -23,3 +23,14 @@ Búsqueda: https://es.wikipedia.org/w/api.php?action=query&list=search&srsearch=
 
 Contenido: https://es.wikipedia.org/w/api.php?action=parse&page={title}&prop=text&format=json&origin=*
 
+Tres prompts importantes en el desarrollo y sus respuestas:
+- Actúá como desarrollador frontend especializado en estética retro de los 90s/2000s. Necesito una estructural html para una pagina que consulte la API de wikipedia, con una barra de búsqueda y un área de resultados. El diseño debe evocar la estética Utopian Scholastic. La documentación está en el archivo README.md de este proyecto, solo lee esta carpeta.
+  Resultado: Se creó el index.html con la estructura semántica completa yun style.css con estética Utopian Scholastic
+  Problemas: La estética de la página no fue del todo "Utopian Scholastic", entonces tuve que agregarlo al issue.
+- Escribe el código del javascript que use fetch() para buscar en la API indicada y devuelva los resultados, debe incluir el api user agent especificado en README.md y manejar errores 429 y de red.
+    Resultado: Se implementó script.js con searchWikipedia(), que devuelve datos y envía api-user-agent, usa origin=* y aplica filtro por namespace y ordenación. Incluye estados de carga, sin resultados y error, mensajes especificos para http. Verificado con node --check y una consulta real a la API.
+    Problemas: La comunicación era correcta pero olvidé implementar que fuese un despliegue en el mismo sitio web en lugar de que sea una redirección a wikipedia.
+- Me gustaría hace rcambios en la paleta de colores y fonts, procura utilizar los siguientes colores: [pasted 29 lines], utiliza también las imágenes incluidas en /assets/images de este proyecto en alguna pantalla.
+  Resultado: Se implementaron cambios en la interfaz más a profundidad y se corrigieron algunos errores. Ahora la página muestra el resultado en el mismo sitio web.
+
+En esta práctica, aprendí a gestionar mejor los tokens en opencode, ya que utiliza una configuración predeterminada en la que lee AGENTS.md (que no está creado originalmente) de manera automática. Este detalle hace que se deba inicializar y especificar un resumen de instrucciones claras que tenga que ejecutar en cada consulta en lugar de releer todo el proyecto.
